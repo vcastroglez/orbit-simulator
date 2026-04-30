@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://6bn85bmhtnf7"]
+
+[ext_resource type="Script" path="res://universe/massive_object/massive_object.gd" id="1_ud1qf"]
+[ext_resource type="Texture2D" uid="uid://dgklnkpe45rhm" path="res://universe/massive_object/massive.png" id="2_gsdsm"]
+[ext_resource type="Texture2D" uid="uid://c2nuhml82sbql" path="res://universe/massive_object/arrow.png" id="3_i4ht8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ev0jv"]
+friction = 0.0
+absorbent = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2h04e"]
+radius = 356.359
+
+[node name="MassiveObject" type="RigidBody2D"]
+z_index = 1
+physics_material_override = SubResource("PhysicsMaterial_ev0jv")
+gravity_scale = 0.0
+script = ExtResource("1_ud1qf")
+
+[node name="image" type="Sprite2D" parent="."]
+scale = Vector2(1.72286, 1.72286)
+texture = ExtResource("2_gsdsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2h04e")
+disabled = true
+
+[node name="VelocityVector" type="Sprite2D" parent="."]
+texture = ExtResource("3_i4ht8")

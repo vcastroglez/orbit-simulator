@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cbal1t6q72v5i"]
+
+[ext_resource type="PackedScene" uid="uid://6bn85bmhtnf7" path="res://universe/massive_object/massive_object.tscn" id="1_afvrp"]
+[ext_resource type="Script" uid="uid://du85sahxoho6v" path="res://universe/universe.gd" id="1_ufv31"]
+[ext_resource type="Texture2D" uid="uid://v3xa412p6rem" path="res://universe/background.jpg" id="3_mvjrl"]
+
+[node name="Universe" type="Node2D" unique_id=988937114]
+script = ExtResource("1_ufv31")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1968786689]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=656869987]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mvjrl")
+expand_mode = 3
+
+[node name="MassiveObject" parent="." unique_id=972391049 instance=ExtResource("1_afvrp")]
+position = Vector2(-856, -3090)
+linear_velocity = Vector2(300, 300)
+
+[node name="MassiveObject2" parent="." unique_id=1292910689 instance=ExtResource("1_afvrp")]
+position = Vector2(3779, -3453)
+linear_velocity = Vector2(300, 300)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1414344367]
+z_index = 2
+zoom = Vector2(0.1, 0.1)
+process_callback = 0
+
+[node name="MassiveObject3" parent="." unique_id=1819961364 instance=ExtResource("1_afvrp")]
+position = Vector2(1727, 1709)
+linear_velocity = Vector2(300, 300)
+
+[node name="Sun" parent="." unique_id=888449733 instance=ExtResource("1_afvrp")]
+position = Vector2(-1386, 273)
+mass = 0.001
+body_mass = 1.989e+30
+
+[node name="MassiveObject5" parent="." unique_id=502159409 instance=ExtResource("1_afvrp")]
+position = Vector2(-3055, -1477)
+
+[node name="MassiveObject6" parent="." unique_id=326941342 instance=ExtResource("1_afvrp")]
+position = Vector2(7980, 97)
+
+[node name="MassiveObject7" parent="." unique_id=603904329 instance=ExtResource("1_afvrp")]
+position = Vector2(22046, 3921)
