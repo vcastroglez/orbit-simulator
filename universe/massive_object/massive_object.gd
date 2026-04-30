@@ -42,7 +42,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		total_accel += Calculations.geodesic_accel(r_vec, state.linear_velocity, body.body_mass)
 
 		# Curvature percentage uses SI units (via scale_factor) for visual feedback only
-		var r_m := r_vec.length() / scale_factor
+		var r_m: float = r_vec.length() / scale_factor
 		total_curvature += Calculations.spacetime_curvature_percent(r_m, body.body_mass)
 
 	# Euler integration of geodesic velocity change: Δv = a · Δt
@@ -52,11 +52,11 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	_update_visual_curvature(total_curvature)
 
 func _update_visual_curvature(curvature: float) -> void:
-	var intensity := clamp(curvature / 10.0, 0.0, 1.0)
+	var intensity: float = clamp(curvature / 10.0, 0.0, 1.0)
 	velocity_vector.modulate = Color(1.0, 1.0 - intensity * 0.5, 1.0 - intensity * 0.5)
-	var scale_effect := 1.0 + (curvature / 1000.0)
+	var scale_effect: float = 1.0 + (curvature / 1000.0)
 	velocity_vector.scale = Vector2.ONE * scale_effect
 
 func get_influence(object: MassiveObject) -> float:
-	var distance := Calculations.get_distance(object.position, self.position)
+	var distance: float = Calculations.get_distance(object.position, self.position)
 	return Calculations.spacetime_curvature_percent(distance, self.mass)
