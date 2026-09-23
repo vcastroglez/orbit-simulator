@@ -4,10 +4,10 @@ OrbitSimulator is a personal, unfinished Godot experiment exploring how orbital 
 
 The project contains two stages of the experiment:
 
-- **`main`** — the current Schwarzschild-inspired geodesic approximation.
-- **`original-curvature-model`** — the original conceptual prototype, preserved for comparison.
+- **`main`**: the current Schwarzschild-inspired geodesic approximation.
+- **`original-curvature-model`**: the original conceptual prototype, preserved for comparison.
 
-> This is an educational and visual experiment, not a scientifically validated general-relativity solver. Constants are intentionally scaled so relativistic-looking effects are visible in a 2D game-sized simulation.
+> This is an educational and visual experiment, not a scientifically validated general-relativity solver. Constants are intentionally scaled so relativistic-looking effects are visible in a 2D game-sized simulation. Put less formally, the speed of light has been nerfed so the interesting bits fit on screen.
 
 ## Current model
 
